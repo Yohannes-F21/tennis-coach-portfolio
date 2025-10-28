@@ -37,12 +37,12 @@ export default function HeroSection() {
 
   return (
     <section
-      id="home"
+      id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video
+        {/* <video
           autoPlay
           loop
           muted
@@ -50,7 +50,12 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
+        </video> */}
+        <img
+          src="/tennis-hero2.jpeg"
+          alt="hero"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/50 to-black/70" />
       </div>
 
@@ -72,7 +77,7 @@ export default function HeroSection() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block bg-primary hover:bg-accent text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg transition-colors duration-200"
+            className="inline-block bg-primary  text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg transition-colors duration-200"
           >
             Contact Me
           </motion.a>
