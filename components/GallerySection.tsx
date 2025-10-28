@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { X } from "lucide-react"
-import { gallery } from "@/data/gallery"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { X } from "lucide-react";
+import { gallery } from "@/data/gallery";
 
 export default function GallerySection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [selectedImage, setSelectedImage] = useState<number | null>(null)
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   return (
     <section id="gallery" className="py-20 bg-background" ref={ref}>
@@ -19,7 +19,9 @@ export default function GallerySection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-6">Gallery</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-6">
+            Gallery
+          </h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
             A glimpse into our high-performance training sessions
           </p>
@@ -52,7 +54,11 @@ export default function GallerySection() {
             className="max-w-4xl mx-auto"
           >
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls className="w-full h-full" poster="/tennis-training-session.jpg">
+              <video
+                controls
+                className="w-full h-full"
+                poster="/tennis-training-session.jpg"
+              >
                 <source src="/videos/training-highlight.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -87,5 +93,5 @@ export default function GallerySection() {
         </motion.div>
       )}
     </section>
-  )
+  );
 }

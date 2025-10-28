@@ -77,7 +77,17 @@ export default function HeroSection() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block bg-primary  text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg transition-colors duration-200"
+            className="
+                        px-8 py-3 
+                        bg-[#1A1A1A] 
+                        hover:bg-[#2A2A2A] 
+                        text-white text-lg font-medium 
+                        rounded-full 
+                        border border-[#D4AF37] 
+                        hover:border-white 
+                        transition-all duration-300 
+                        shadow-lg hover:shadow-xl
+                      "
           >
             Contact Me
           </motion.a>
