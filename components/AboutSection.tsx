@@ -36,8 +36,8 @@ export default function AboutSection() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Hello, my name is Abenezer Tsegaye (abel). I am a tennis coach
-                and a national team player. I started playing when I was a
+                Hello, my name is Abenezer Tsegaye <b>(Abel)</b>. I am a tennis
+                coach and a national team player. I started playing when I was a
                 child.Since then, I have worked hard and participated in various
                 tournaments and games and win some of them. Then, I became
                 interested in becoming a coach and learning more about tennis.To

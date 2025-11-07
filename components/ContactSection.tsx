@@ -1,39 +1,69 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { Instagram, Facebook, Youtube, Mail, MessageCircle, MapPin, Send } from "lucide-react"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import {
+  Instagram,
+  Facebook,
+  Youtube,
+  Mail,
+  MessageCircle,
+  MapPin,
+  Send,
+} from "lucide-react";
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram", color: "hover:text-pink-600" },
-  { icon: Facebook, href: "#", label: "Facebook", color: "hover:text-blue-600" },
-  { icon: MessageCircle, href: "#", label: "WhatsApp", color: "hover:text-green-600" },
+  {
+    icon: Instagram,
+    href: "#",
+    label: "Instagram",
+    color: "hover:text-pink-600",
+  },
+  {
+    icon: Facebook,
+    href: "#",
+    label: "Facebook",
+    color: "hover:text-blue-600",
+  },
+  {
+    icon: MessageCircle,
+    href: "#",
+    label: "WhatsApp",
+    color: "hover:text-green-600",
+  },
   { icon: Youtube, href: "#", label: "YouTube", color: "hover:text-red-600" },
-  { icon: Mail, href: "mailto:coach@example.com", label: "Email", color: "hover:text-primary" },
-]
+  {
+    icon: Mail,
+    href: "mailto:coach@example.com",
+    label: "Email",
+    color: "hover:text-primary",
+  },
+];
 
 export default function ContactSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
+    e.preventDefault();
+    console.log("Form submitted:", formData);
     // Handle form submission
-  }
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   return (
     <section id="contact" className="py-20 bg-background" ref={ref}>
@@ -43,7 +73,9 @@ export default function ContactSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-6">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-6">
+            Get In Touch
+          </h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
             Ready to take your game to the next level? Let's connect!
           </p>
@@ -58,7 +90,10 @@ export default function ContactSection() {
               className="space-y-6"
             >
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
                   Name
                 </label>
                 <input
@@ -73,7 +108,10 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -88,7 +126,10 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
                   Subject
                 </label>
                 <input
@@ -103,7 +144,10 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
                   Message
                 </label>
                 <textarea
@@ -121,7 +165,7 @@ export default function ContactSection() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-primary hover:bg-accent text-white px-6 py-4 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                className="w-full bg-primary  text-white px-6 py-4 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
               >
                 <Send className="w-5 h-5" />
                 Send Message
@@ -137,10 +181,12 @@ export default function ContactSection() {
             >
               {/* Social Links */}
               <div>
-                <h3 className="text-xl font-bold text-foreground mb-4">Connect With Me</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Connect With Me
+                </h3>
                 <div className="flex flex-wrap gap-4">
                   {socialLinks.map((social) => {
-                    const Icon = social.icon
+                    const Icon = social.icon;
                     return (
                       <motion.a
                         key={social.label}
@@ -151,7 +197,7 @@ export default function ContactSection() {
                       >
                         <Icon className="w-6 h-6" />
                       </motion.a>
-                    )
+                    );
                   })}
                 </div>
               </div>
@@ -161,7 +207,9 @@ export default function ContactSection() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">Training Location</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      Training Location
+                    </h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Elite Tennis Academy
                       <br />
@@ -191,5 +239,5 @@ export default function ContactSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

@@ -59,7 +59,7 @@ export default function GallerySection() {
                 className="w-full h-full"
                 poster="/tennis-training-session.jpg"
               >
-                <source src="/videos/training-highlight.mp4" type="video/mp4" />
+                <source src="/video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

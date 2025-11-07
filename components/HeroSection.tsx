@@ -12,16 +12,19 @@ import {
 import { useState, useEffect } from "react";
 
 const testimonials = [
-  { quote: "Coach Alex transformed my game completely!", author: "Sarah M." },
-  { quote: "Best tennis coach I've ever worked with.", author: "Michael R." },
-  { quote: "My confidence on court has skyrocketed!", author: "Emma L." },
+  {
+    quote: "Coach Abenezer transformed my game completely!",
+    author: "Yohannes F.",
+  },
+  { quote: "Best tennis coach I've ever worked with.", author: "Mulugeta R." },
+  { quote: "My confidence on court has skyrocketed!", author: "Nahome T." },
 ];
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Facebook, href: "#", label: "Facebook" },
   { icon: MessageCircle, href: "#", label: "WhatsApp" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  // { icon: Youtube, href: "#", label: "YouTube" },
   { icon: Mail, href: "#contact", label: "Email" },
 ];
 
@@ -42,15 +45,6 @@ export default function HeroSection() {
     >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        {/* <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video> */}
         <img
           src="/tennis-hero2.jpeg"
           alt="hero"
@@ -125,15 +119,6 @@ export default function HeroSection() {
               — {testimonials[currentTestimonial].author}
             </p>
           </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <ChevronDown className="w-8 h-8 text-white/70" />
         </motion.div>
       </div>
     </section>
