@@ -31,7 +31,13 @@ export default function Footer() {
         </div>
 
         <div className="text-center mt-4 text-xs text-white/60">
-          Designed with passion for tennis excellence
+          Designed by Yohannes Fantahun (Web Developer)
+        </div>
+        <div className="text-center mt-4 text-xs text-white/60">
+          email: yohannesfantahun.m@gmail.com
+        </div>
+        <div className="text-center mt-4 text-xs text-white/60">
+          phone: +251910594289{" "}
         </div>
       </div>
     </footer>
