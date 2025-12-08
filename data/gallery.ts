@@ -1,36 +1,36 @@
 export const gallery = {
   images: [
     {
-      url: "/tennis-coach-teaching-forehand.jpg",
+      url: "/image1.jpg",
       caption: "Forehand technique training",
     },
     {
-      url: "/tennis-player-serving.jpg",
+      url: "/image2.jpg",
       caption: "Serve mechanics",
     },
     {
-      url: "/tennis-footwork-drills.jpg",
+      url: "/image3.jpg",
       caption: "Footwork and agility drills",
     },
     {
-      url: "/tennis-group-training-session.jpg",
+      url: "/image4.jpg",
       caption: "Group training session",
     },
     {
-      url: "/tennis-backhand-practice.jpg",
+      url: "/image5.jpg",
       caption: "Backhand development",
     },
     {
-      url: "/placeholder.svg?height=400&width=400",
+      url: "image6.jpg",
       caption: "Court positioning strategy",
     },
-    {
-      url: "/placeholder.svg?height=400&width=400",
-      caption: "Tournament preparation",
-    },
-    {
-      url: "/placeholder.svg?height=400&width=400",
-      caption: "Mental conditioning session",
-    },
+    // {
+    //   url: "/placeholder.svg?height=400&width=400",
+    //   caption: "Tournament preparation",
+    // },
+    // {
+    //   url: "/placeholder.svg?height=400&width=400",
+    //   caption: "Mental conditioning session",
+    // },
   ],
-}
+};

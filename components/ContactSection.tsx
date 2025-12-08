@@ -52,11 +52,68 @@ export default function ContactSection() {
     subject: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [toast, setToast] = useState<{
+    show: boolean;
+    message: string;
+    type: "success" | "error";
+  }>({
+    show: false,
+    message: "",
+    type: "success",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const showToast = (message: string, type: "success" | "error") => {
+    setToast({ show: true, message, type });
+
+    // Auto-hide after 4 seconds
+    setTimeout(() => {
+      setToast({ show: false, message: "", type: "success" });
+    }, 4000);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
+    setLoading(true);
+    setError("");
+
+    try {
+      const fd = new FormData();
+      fd.append("name", formData.name);
+      fd.append("email", formData.email);
+      fd.append("subject", formData.subject);
+      fd.append("message", formData.message);
+
+      // Required for FormSubmit to NOT redirect
+      fd.append("_redirect", "false");
+
+      const response = await fetch(
+        "https://formsubmit.co/yohannesfantahun88@gmail.com",
+        {
+          method: "POST",
+          body: fd, // ❗ No headers needed
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to send message. Try again later.");
+      }
+
+      showToast("Message sent successfully!", "success");
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (err: any) {
+      setError(err.message);
+      showToast(err.message, "error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -67,6 +124,14 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-20 bg-background" ref={ref}>
+      {toast.show && (
+        <div
+          className={`fixed top-6 right-6 px-4 py-3 rounded-lg shadow-lg text-white z-50 
+      ${toast.type === "success" ? "bg-green-600" : "bg-red-600"}`}
+        >
+          {toast.message}
+        </div>
+      )}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -163,14 +228,25 @@ export default function ContactSection() {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-primary  text-white px-6 py-4 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                disabled={loading}
+                whileHover={{ scale: loading ? 1 : 1.02 }}
+                whileTap={{ scale: loading ? 1 : 0.98 }}
+                className={`w-full bg-primary text-white px-6 py-4 rounded-xl font-semibold shadow-md 
+    hover:shadow-lg transition-all flex items-center justify-center gap-2
+    ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
               >
-                <Send className="w-5 h-5" />
-                Send Message
+                {loading ? (
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    Send Message
+                  </>
+                )}
               </motion.button>
             </motion.form>
+
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
             {/* Contact Info */}
             <motion.div

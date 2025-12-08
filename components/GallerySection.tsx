@@ -22,12 +22,8 @@ export default function GallerySection() {
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-6">
             Gallery
           </h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            A glimpse into our high-performance training sessions
-          </p>
-
           {/* Photo Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-12">
             {gallery.images.map((image, index) => (
               <motion.div
                 key={index}
@@ -55,11 +51,14 @@ export default function GallerySection() {
           >
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
               <video
-                controls
-                className="w-full h-full"
-                poster="/tennis-training-session.jpg"
+                className="w-full h-full object-cover"
+                poster="/image1.jpg"
+                autoPlay
+                loop
+                muted
+                playsInline
               >
-                <source src="/video.mp4" type="video/mp4" />
+                <source src="/training.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
