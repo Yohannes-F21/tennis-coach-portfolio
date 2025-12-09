@@ -293,11 +293,11 @@ export default function ContactSection() {
                       Training Location
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Elite Tennis Academy
+                      Shalla Tennis Club
                       <br />
-                      123 Court Street
+                      Addis Ababa, Ethiopia
                       <br />
-                      Los Angeles, CA 90001
+                      woreda 03, Bole
                     </p>
                   </div>
                 </div>
@@ -306,7 +306,7 @@ export default function ContactSection() {
               {/* Map */}
               <div className="aspect-video rounded-2xl overflow-hidden shadow-md">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.7334!2d-118.2437!3d34.0522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDAzJzA4LjAiTiAxMTjCsDE0JzM3LjMiVw!5e0!3m2!1sen!2sus!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d360.7095702676977!2d38.78359989253635!3d9.004075344695863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85fa862a93d5%3A0xa57cdf3e4d54ffe9!2sShalla%20Ground%20Tennis%20Court!5e1!3m2!1sen!2set!4v1765285416019!5m2!1sen!2set"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

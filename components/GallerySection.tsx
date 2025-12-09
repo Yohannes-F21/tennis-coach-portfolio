@@ -58,7 +58,7 @@ export default function GallerySection() {
                 muted
                 playsInline
               >
-                <source src="/training.mp4" type="video/mp4" />
+                <source src="/edited-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

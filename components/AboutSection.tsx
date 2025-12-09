@@ -21,8 +21,8 @@ export default function AboutSection() {
           <div className="relative">
             <div className="aspect-4/5 rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="/professional-tennis-coach-on-court-with-racket.jpg"
-                alt="Coach Alex Martinez"
+                src="/enhanced-about.png"
+                alt="Coach Abenezer Tsegaye"
                 className="w-full h-full object-cover"
               />
             </div>
