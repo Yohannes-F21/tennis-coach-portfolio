@@ -7,38 +7,44 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import {
   Instagram,
-  Facebook,
   Youtube,
   Mail,
   MessageCircle,
   MapPin,
   Send,
+  Music2,
 } from "lucide-react";
 
 const socialLinks = [
   {
     icon: Instagram,
-    href: "#",
+    href: "https://www.instagram.com/abel_tesgaye?utm_source=qr&igsh=M2lvdjNzaTFuMzZh",
     label: "Instagram",
     color: "hover:text-pink-600",
   },
   {
-    icon: Facebook,
-    href: "#",
-    label: "Facebook",
+    icon: Send,
+    href: "@Abeltesgaye",
+    label: "Telegram",
     color: "hover:text-blue-600",
   },
   {
     icon: MessageCircle,
-    href: "#",
+    href: "https://wa.me/qr/TSK2G2JCLS6IG1",
     label: "WhatsApp",
     color: "hover:text-green-600",
   },
-  { icon: Youtube, href: "#", label: "YouTube", color: "hover:text-red-600" },
+
   {
     icon: Mail,
-    href: "mailto:coach@example.com",
+    href: "mailto:abenzer.tesgaye1224@gmail.com",
     label: "Email",
+    color: "hover:text-primary",
+  },
+  {
+    icon: Music2,
+    href: "https://www.tiktok.com/@abela_tag168?_r=1&_t=ZM-923bUKkpY7A",
+    label: "TikTok",
     color: "hover:text-primary",
   },
 ];
@@ -232,8 +238,8 @@ export default function ContactSection() {
                 whileHover={{ scale: loading ? 1 : 1.02 }}
                 whileTap={{ scale: loading ? 1 : 0.98 }}
                 className={`w-full bg-primary text-white px-6 py-4 rounded-xl font-semibold shadow-md 
-    hover:shadow-lg transition-all flex items-center justify-center gap-2
-    ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                             hover:shadow-lg transition-all flex items-center justify-center gap-2
+                ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
               >
                 {loading ? (
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import {
   Instagram,
-  Facebook,
+  Send,
   Youtube,
   Mail,
   MessageCircle,
@@ -21,9 +21,17 @@ const testimonials = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: MessageCircle, href: "#", label: "WhatsApp" },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/abel_tesgaye?utm_source=qr&igsh=M2lvdjNzaTFuMzZh",
+    label: "Instagram",
+  },
+  { icon: Send, href: "@Abeltesgaye", label: "Telegram" },
+  {
+    icon: MessageCircle,
+    href: "https://www.instagram.com/abel_tesgaye?utm_source=qr&igsh=M2lvdjNzaTFuMzZh",
+    label: "WhatsApp",
+  },
   // { icon: Youtube, href: "#", label: "YouTube" },
   { icon: Mail, href: "#contact", label: "Email" },
 ];
