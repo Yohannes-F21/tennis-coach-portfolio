@@ -12,6 +12,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Coach Abenezer Tsegaye - Professional Tennis Coach",
   description: "Certified Tennis Instructor helping players elevate their game",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({

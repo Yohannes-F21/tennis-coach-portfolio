@@ -75,7 +75,7 @@ export default function Navbar() {
               pastHero ? "text-primary" : "text-white"
             }`}
           >
-            Coach Abenezer Tsegaye
+            <img src="/logo.png" alt="logo" className="w-10 h-10" />
           </a> */}
 
           {/* DESKTOP LINKS */}
